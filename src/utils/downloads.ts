@@ -86,7 +86,7 @@ export function buildMissionConfigJson(
 ): string {
   const payload = {
     project: 'AstroApex',
-    school: 'Sınav İncek Fen Lisesi',
+    school: 'Sınav İncek Science High School',
     generatedAt: new Date().toISOString(),
     liveAtlasUrl: comparison.atlasUrl,
     missionParameters: {

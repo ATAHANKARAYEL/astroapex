@@ -289,10 +289,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Teknik Görev Brifingi',
     mdDesc: 'Sunumlar ve mühendislik incelemeleri için özetlenmiş karar raporu ve ekip bilgileri.',
     aboutKicker: 'Biz Kimiz',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
-    aboutTitle: 'Sınav İncek Fen Lisesi AstroApex Geliştirme Ekibi',
+    aboutSchool: 'Sınav İncek Science High School',
+    aboutTitle: 'Sınav İncek Science High School AstroApex Geliştirme Ekibi',
     aboutP1:
-      'Sınav İncek Fen Lisesi öğrencileri olarak; NASA LRO LOLA ay topografya verilerini, Güneş aydınlanma modellerini ve Dünya doğrudan iletişim geometrisini herkesin tarayıcı üzerinden erişebileceği açık bir görev planlama atlasına dönüştürdük.',
+      'Sınav İncek Science High School öğrencileri olarak; NASA LRO LOLA ay topografya verilerini, Güneş aydınlanma modellerini ve Dünya doğrudan iletişim geometrisini herkesin tarayıcı üzerinden erişebileceği açık bir görev planlama atlasına dönüştürdük.',
     aboutP2:
       'AstroApex ile Artemis dönemi güney kutbu aday sahalarını ağır kurulumlara ihtiyaç duymadan kıyaslamayı, enerji ve iletişim pencerelerini şeffaf biçimde hesaplamayı ve bilimsel verileri paylaşılabilir hale getirmeyi hedefliyoruz.',
     aboutStat1Value: '4',
@@ -303,8 +303,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Gerçek Ufuk Profili',
     contribKicker: 'Proje Ekibi',
     contribTitle: 'Emeği Geçenler',
-    contribLead: 'Sınav İncek Fen Lisesi · AstroApex Ekibi',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Ay Güney Kutbu İniş Sahası Gezgini',
+    contribLead: 'Sınav İncek Science High School · AstroApex Ekibi',
+    footerSubtitle: 'Sınav İncek Science High School · Ay Güney Kutbu İniş Sahası Gezgini',
     footerLiveAtlas: 'Canlı Atlas',
   },
   en: {
@@ -427,9 +427,9 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdDesc: 'Concise engineering report and contributor record ready for reviews.',
     aboutKicker: 'Who We Are',
     aboutSchool: 'Sınav İncek Science High School',
-    aboutTitle: 'Sınav İncek Fen Lisesi AstroApex Team',
+    aboutTitle: 'Sınav İncek Science High School AstroApex Team',
     aboutP1:
-      'As students of Sınav İncek Fen Lisesi (Sınav İncek Science High School), we built AstroApex to turn NASA LRO LOLA lunar topography, solar illumination models, and Earth line-of-sight geometry into a fast, browser-native mission planning atlas.',
+      'As students of Sınav İncek Science High School, we built AstroApex to turn NASA LRO LOLA lunar topography, solar illumination models, and Earth line-of-sight geometry into a fast, browser-native mission planning atlas.',
     aboutP2:
       'Our goal is to help researchers, students, and mission designers compare Artemis-era lunar south pole sites transparently across power and communications without heavy desktop software.',
     aboutStat1Value: '4',
@@ -440,8 +440,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Real Horizon Profile',
     contribKicker: 'Project Team',
     contribTitle: 'Contributors',
-    contribLead: 'Sınav İncek Fen Lisesi · AstroApex Team',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Lunar Landing Site Navigator',
+    contribLead: 'Sınav İncek Science High School · AstroApex Team',
+    footerSubtitle: 'Sınav İncek Science High School · Lunar Landing Site Navigator',
     footerLiveAtlas: 'Live Atlas',
   },
   es: {
@@ -557,10 +557,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Informe Técnico de Misión',
     mdDesc: 'Resumen de ingeniería y registro del equipo en Markdown.',
     aboutKicker: 'Quiénes Somos',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
-    aboutTitle: 'Equipo AstroApex de Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
+    aboutTitle: 'Equipo AstroApex de Sınav İncek Science High School',
     aboutP1:
-      'Como estudiantes de Sınav İncek Fen Lisesi, creamos AstroApex para convertir datos topográficos NASA LRO LOLA y cálculos orbitales en un atlas web rápido y accesible.',
+      'Como estudiantes de Sınav İncek Science High School, creamos AstroApex para convertir datos topográficos NASA LRO LOLA y cálculos orbitales en un atlas web rápido y accesible.',
     aboutP2:
       'Nuestro objetivo es facilitar la comparación transparente de sitios lunares Artemis en energía solar y comunicación directa sin software pesado.',
     aboutStat1Value: '4',
@@ -571,8 +571,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Perfil Real de Horizonte',
     contribKicker: 'Equipo del Proyecto',
     contribTitle: 'Colaboradores',
-    contribLead: 'Sınav İncek Fen Lisesi · Equipo AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Navegador Lunar AstroApex',
+    contribLead: 'Sınav İncek Science High School · Equipo AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · Navegador Lunar AstroApex',
     footerLiveAtlas: 'Atlas en Vivo',
   },
   fr: {
@@ -687,10 +687,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Briefing Technique de Mission',
     mdDesc: 'Rapport synthétique et liste de l’équipe en format Markdown.',
     aboutKicker: 'Qui Sommes-Nous',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
     aboutTitle: 'Équipe AstroApex du Lycée Scientifique Sınav İncek',
     aboutP1:
-      'Étudiants de Sınav İncek Fen Lisesi, nous avons conçu AstroApex pour transformer les données topographiques NASA LRO LOLA et les éphémérides en un atlas web accessible.',
+      'Étudiants de Sınav İncek Science High School, nous avons conçu AstroApex pour transformer les données topographiques NASA LRO LOLA et les éphémérides en un atlas web accessible.',
     aboutP2:
       'Notre objectif est de comparer de façon transparente les futurs sites d’atterrissage lunaires Artemis en énergie et télécommunications.',
     aboutStat1Value: '4',
@@ -701,8 +701,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Profil d’Horizon Réel',
     contribKicker: 'Équipe du Projet',
     contribTitle: 'Contributeurs',
-    contribLead: 'Sınav İncek Fen Lisesi · Équipe AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Navigateur Lunaire AstroApex',
+    contribLead: 'Sınav İncek Science High School · Équipe AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · Navigateur Lunaire AstroApex',
     footerLiveAtlas: 'Atlas en Direct',
   },
   de: {
@@ -817,10 +817,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Technisches Missions-Briefing',
     mdDesc: 'Kompakter Ingenieurbericht und Teamübersicht im Markdown-Format.',
     aboutKicker: 'Über Uns',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
-    aboutTitle: 'AstroApex-Team der Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
+    aboutTitle: 'AstroApex-Team der Sınav İncek Science High School',
     aboutP1:
-      'Als Schülerinnen und Schüler des Naturwissenschaftlichen Gymnasiums Sınav İncek Fen Lisesi machen wir NASA-LRO-LOLA-Daten und Bahnberechnungen direkt im Browser nutzbar.',
+      'Als Schülerinnen und Schüler des Naturwissenschaftlichen Gymnasiums Sınav İncek Science High School machen wir NASA-LRO-LOLA-Daten und Bahnberechnungen direkt im Browser nutzbar.',
     aboutP2:
       'Unser Ziel ist ein transparenter Vergleich von Energie- und Kommunikationsfenstern am Südpol des Mondes ohne komplexe Desktop-Software.',
     aboutStat1Value: '4',
@@ -831,8 +831,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Echtes Horizontprofil',
     contribKicker: 'Projektteam',
     contribTitle: 'Mitwirkende',
-    contribLead: 'Sınav İncek Fen Lisesi · AstroApex-Team',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Mondlandeplatz-Navigator',
+    contribLead: 'Sınav İncek Science High School · AstroApex-Team',
+    footerSubtitle: 'Sınav İncek Science High School · Mondlandeplatz-Navigator',
     footerLiveAtlas: 'Live-Atlas',
   },
   it: {
@@ -947,10 +947,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Briefing Tecnico di Missione',
     mdDesc: 'Sintesi ingegneristica e lista del team in Markdown.',
     aboutKicker: 'Chi Siamo',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
     aboutTitle: 'Team AstroApex del Liceo Scientifico Sınav İncek',
     aboutP1:
-      'Studenti di Sınav İncek Fen Lisesi, abbiamo creato AstroApex per rendere accessibili nel browser i dati topografici NASA LRO LOLA e il calcolo delle finestre orbitali.',
+      'Studenti di Sınav İncek Science High School, abbiamo creato AstroApex per rendere accessibili nel browser i dati topografici NASA LRO LOLA e il calcolo delle finestre orbitali.',
     aboutP2:
       'Il nostro obiettivo è confrontare in modo chiaro i siti lunari Artemis per energia solare e comunicazioni dirette.',
     aboutStat1Value: '4',
@@ -961,8 +961,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Profilo Reale Orizzonte',
     contribKicker: 'Team di Progetto',
     contribTitle: 'Collaboratori',
-    contribLead: 'Sınav İncek Fen Lisesi · Team AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Navigatore Lunare AstroApex',
+    contribLead: 'Sınav İncek Science High School · Team AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · Navigatore Lunare AstroApex',
     footerLiveAtlas: 'Atlante Live',
   },
   pt: {
@@ -1077,10 +1077,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Briefing Técnico da Missão',
     mdDesc: 'Relatório técnico resumido e equipe em Markdown.',
     aboutKicker: 'Quem Somos',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
-    aboutTitle: 'Equipe AstroApex da Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
+    aboutTitle: 'Equipe AstroApex da Sınav İncek Science High School',
     aboutP1:
-      'Como estudantes da Sınav İncek Fen Lisesi, desenvolvemos o AstroApex para transformar dados topográficos NASA LRO LOLA e efemérides em um atlas web acessível.',
+      'Como estudantes da Sınav İncek Science High School, desenvolvemos o AstroApex para transformar dados topográficos NASA LRO LOLA e efemérides em um atlas web acessível.',
     aboutP2:
       'Nosso objetivo é permitir a comparação transparente de locais lunares Artemis em geração de energia e comunicação direta.',
     aboutStat1Value: '4',
@@ -1091,8 +1091,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Perfil Real de Horizonte',
     contribKicker: 'Equipe do Projeto',
     contribTitle: 'Colaboradores',
-    contribLead: 'Sınav İncek Fen Lisesi · Equipe AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Navegador Lunar AstroApex',
+    contribLead: 'Sınav İncek Science High School · Equipe AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · Navegador Lunar AstroApex',
     footerLiveAtlas: 'Atlas ao Vivo',
   },
   ru: {
@@ -1207,10 +1207,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Технический бриф миссии',
     mdDesc: 'Краткий инженерный отчёт и состав команды в Markdown.',
     aboutKicker: 'О нас',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
-    aboutTitle: 'Команда AstroApex лицея Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
+    aboutTitle: 'Команда AstroApex лицея Sınav İncek Science High School',
     aboutP1:
-      'Мы — команда научного лицея Sınav İncek Fen Lisesi. Мы объединили топографию NASA LRO LOLA и расчёты эфемерид в быстрый браузерный атлас планирования лунных миссий.',
+      'Мы — команда научного лицея Sınav İncek Science High School. Мы объединили топографию NASA LRO LOLA и расчёты эфемерид в быстрый браузерный атлас планирования лунных миссий.',
     aboutP2:
       'Наша цель — дать исследователям и студентам прозрачный инструмент оценки солнечной энергии и прямой связи с Землёй для площадок Artemis.',
     aboutStat1Value: '4',
@@ -1221,8 +1221,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Реальный горизонт',
     contribKicker: 'Команда проекта',
     contribTitle: 'Участники',
-    contribLead: 'Sınav İncek Fen Lisesi · Команда AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Лунный навигатор AstroApex',
+    contribLead: 'Sınav İncek Science High School · Команда AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · Лунный навигатор AstroApex',
     footerLiveAtlas: 'Онлайн-атлас',
   },
   zh: {
@@ -1337,10 +1337,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: '技术任务简报',
     mdDesc: '适用于汇报和工程评审的 Markdown 摘要与团队记录。',
     aboutKicker: '关于我们',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
     aboutTitle: 'Sınav İncek 科学高中 AstroApex 研发团队',
     aboutP1:
-      '作为 Sınav İncek Fen Lisesi（Sınav İncek 科学高中）的学生团队，我们将 NASA LRO LOLA 月球地形与星历计算转化为免安装、浏览器直运行的任务规划图谱。',
+      '作为 Sınav İncek Science High School（Sınav İncek 科学高中）的学生团队，我们将 NASA LRO LOLA 月球地形与星历计算转化为免安装、浏览器直运行的任务规划图谱。',
     aboutP2:
       '我们致力于帮助科研人员与学生透明地比较 Artemis 月球南极候选区在供电与对地通信方面的表现。',
     aboutStat1Value: '4',
@@ -1351,8 +1351,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: '真实地平线剖面',
     contribKicker: '项目团队',
     contribTitle: '贡献者',
-    contribLead: 'Sınav İncek Fen Lisesi · AstroApex 团队',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · AstroApex 月球着陆区导航',
+    contribLead: 'Sınav İncek Science High School · AstroApex 团队',
+    footerSubtitle: 'Sınav İncek Science High School · AstroApex 月球着陆区导航',
     footerLiveAtlas: '在线图谱',
   },
   ja: {
@@ -1467,10 +1467,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: '技術ミッションブリーフィング',
     mdDesc: '技術レビューや発表向けの要約レポート。',
     aboutKicker: '私たちについて',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
     aboutTitle: 'Sınav İncek 科学高校 AstroApex 開発チーム',
     aboutP1:
-      'Sınav İncek Fen Lisesi（Sınav İncek 科学高校）の生徒チームとして、NASA LRO LOLA 地形データと天体暦計算をブラウザ上で即座に使える月面ミッションアトラスとして開発しました。',
+      'Sınav İncek Science High School（Sınav İncek 科学高校）の生徒チームとして、NASA LRO LOLA 地形データと天体暦計算をブラウザ上で即座に使える月面ミッションアトラスとして開発しました。',
     aboutP2:
       'Artemis 世代の月の南極着陸候補地について、電力と直接通信の成立性を誰でも透明に検証できる環境を目指しています。',
     aboutStat1Value: '4',
@@ -1481,8 +1481,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: '実地形地平線',
     contribKicker: 'プロジェクトチーム',
     contribTitle: '開発メンバー',
-    contribLead: 'Sınav İncek Fen Lisesi · AstroApex チーム',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · 月面着陸候補地ナビゲーター',
+    contribLead: 'Sınav İncek Science High School · AstroApex チーム',
+    footerSubtitle: 'Sınav İncek Science High School · 月面着陸候補地ナビゲーター',
     footerLiveAtlas: 'ライブアトラス',
   },
   ko: {
@@ -1597,10 +1597,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: '기술 임무 브리핑',
     mdDesc: '엔지니어링 검토 및 발표용 요약 Markdown 보고서.',
     aboutKicker: '팀 소개',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
     aboutTitle: 'Sınav İncek 과학고등학교 AstroApex 개발팀',
     aboutP1:
-      'Sınav İncek Fen Lisesi 학생들로 구성된 우리 팀은 NASA LRO LOLA 달 지형 데이터와 천체력 계산을 브라우저에서 바로 실행되는 직관적인 아틀라스로 구현했습니다.',
+      'Sınav İncek Science High School 학생들로 구성된 우리 팀은 NASA LRO LOLA 달 지형 데이터와 천체력 계산을 브라우저에서 바로 실행되는 직관적인 아틀라스로 구현했습니다.',
     aboutP2:
       '무거운 전문 프로그램 없이도 Artemis 달 남극 후보지의 전력과 직접 통신 가능성을 투명하게 검증할 수 있도록 설계했습니다.',
     aboutStat1Value: '4',
@@ -1611,8 +1611,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: '실제 지평선 프로필',
     contribKicker: '프로젝트 팀',
     contribTitle: '참여자',
-    contribLead: 'Sınav İncek Fen Lisesi · AstroApex 팀',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · 달 착륙지 내비게이터',
+    contribLead: 'Sınav İncek Science High School · AstroApex 팀',
+    footerSubtitle: 'Sınav İncek Science High School · 달 착륙지 내비게이터',
     footerLiveAtlas: '라이브 아틀라스',
   },
   ar: {
@@ -1727,10 +1727,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'الموجز الهندسي للمهمة',
     mdDesc: 'تقرير تقني موجز وقائمة الفريق بصيغة Markdown.',
     aboutKicker: 'من نحن',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
     aboutTitle: 'فريق AstroApex من ثانوية Sınav İncek للعلوم',
     aboutP1:
-      'نحن طلاب ثانوية Sınav İncek Fen Lisesi للعلوم، طورنا AstroApex لتحويل بيانات تضاريس القمر NASA LRO LOLA وحسابات التقويم الفلكي إلى أطلس ويب سريع وسهل الاستخدام.',
+      'نحن طلاب ثانوية Sınav İncek Science High School للعلوم، طورنا AstroApex لتحويل بيانات تضاريس القمر NASA LRO LOLA وحسابات التقويم الفلكي إلى أطلس ويب سريع وسهل الاستخدام.',
     aboutP2:
       'هدفنا تمكين الباحثين والطلاب من مقارنة مواقع القطب الجنوبي القمري لمهمات Artemis من حيث الطاقة والاتصال المباشر بكل شفافية.',
     aboutStat1Value: '4',
@@ -1741,8 +1741,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'ملف أفق حقيقي',
     contribKicker: 'فريق المشروع',
     contribTitle: 'المساهمون',
-    contribLead: 'Sınav İncek Fen Lisesi · فريق AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · مستكشف مواقع الهبوط القمري',
+    contribLead: 'Sınav İncek Science High School · فريق AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · مستكشف مواقع الهبوط القمري',
     footerLiveAtlas: 'الأطلس المباشر',
   },
   hi: {
@@ -1857,10 +1857,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'तकनीकी मिशन ब्रीफिंग',
     mdDesc: 'इंजीनियरिंग समीक्षा के लिए संक्षिप्त Markdown रिपोर्ट।',
     aboutKicker: 'हमारे बारे में',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
     aboutTitle: 'Sınav İncek साइंस हाई स्कूल AstroApex टीम',
     aboutP1:
-      'Sınav İncek Fen Lisesi के छात्रों के रूप में हमने NASA LRO LOLA चंद्र डेटा और कक्षीय गणनाओं को एक तेज़ वेब मिशन एटलस में बदला है।',
+      'Sınav İncek Science High School के छात्रों के रूप में हमने NASA LRO LOLA चंद्र डेटा और कक्षीय गणनाओं को एक तेज़ वेब मिशन एटलस में बदला है।',
     aboutP2:
       'हमारा लक्ष्य Artemis चंद्र दक्षिणी ध्रुव स्थलों की ऊर्जा और संचार क्षमता की पारदर्शी तुलना संभव बनाना है।',
     aboutStat1Value: '4',
@@ -1871,8 +1871,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'वास्तविक क्षितिज प्रोफ़ाइल',
     contribKicker: 'प्रोजेक्ट टीम',
     contribTitle: 'योगदानकर्ता',
-    contribLead: 'Sınav İncek Fen Lisesi · AstroApex टीम',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · चंद्र लैंडिंग साइट नेविगेटर',
+    contribLead: 'Sınav İncek Science High School · AstroApex टीम',
+    footerSubtitle: 'Sınav İncek Science High School · चंद्र लैंडिंग साइट नेविगेटर',
     footerLiveAtlas: 'लाइव एटलस',
   },
   nl: {
@@ -1987,10 +1987,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Technische Missiebriefing',
     mdDesc: 'Beknopt technisch overzicht en teamlijst in Markdown.',
     aboutKicker: 'Wie Wij Zijn',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
-    aboutTitle: 'Sınav İncek Fen Lisesi AstroApex Team',
+    aboutSchool: 'Sınav İncek Science High School',
+    aboutTitle: 'Sınav İncek Science High School AstroApex Team',
     aboutP1:
-      'Als leerlingen van Sınav İncek Fen Lisesi hebben wij AstroApex gebouwd om NASA LRO LOLA-maantopografie en baanberekeningen direct toegankelijk te maken in de browser.',
+      'Als leerlingen van Sınav İncek Science High School hebben wij AstroApex gebouwd om NASA LRO LOLA-maantopografie en baanberekeningen direct toegankelijk te maken in de browser.',
     aboutP2:
       'Ons doel is een transparante vergelijking van Artemis-zuidpoollocaties voor zonne-energie en directe communicatie.',
     aboutStat1Value: '4',
@@ -2001,8 +2001,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Echt Horizonprofiel',
     contribKicker: 'Projectteam',
     contribTitle: 'Bijdragers',
-    contribLead: 'Sınav İncek Fen Lisesi · AstroApex Team',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Maanlandingsnavigator',
+    contribLead: 'Sınav İncek Science High School · AstroApex Team',
+    footerSubtitle: 'Sınav İncek Science High School · Maanlandingsnavigator',
     footerLiveAtlas: 'Live Atlas',
   },
   pl: {
@@ -2117,10 +2117,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Techniczny Briefing Misji',
     mdDesc: 'Zwięzły raport inżynierski i lista zespołu w Markdown.',
     aboutKicker: 'O Nas',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
-    aboutTitle: 'Zespół AstroApex ze szkoły Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
+    aboutTitle: 'Zespół AstroApex ze szkoły Sınav İncek Science High School',
     aboutP1:
-      'Jako uczniowie liceum Sınav İncek Fen Lisesi stworzyliśmy AstroApex, aby przenieść dane topograficzne NASA LRO LOLA i obliczenia efemeryd bezpośrednio do przeglądarki.',
+      'Jako uczniowie liceum Sınav İncek Science High School stworzyliśmy AstroApex, aby przenieść dane topograficzne NASA LRO LOLA i obliczenia efemeryd bezpośrednio do przeglądarki.',
     aboutP2:
       'Naszym celem jest przejrzyste porównanie miejsc lądowania Artemis pod kątem energii słonecznej i bezpośredniej łączności.',
     aboutStat1Value: '4',
@@ -2131,8 +2131,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Prawdziwy Horyzont',
     contribKicker: 'Zespół Projektowy',
     contribTitle: 'Twórcy',
-    contribLead: 'Sınav İncek Fen Lisesi · Zespół AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Nawigator Księżycowy',
+    contribLead: 'Sınav İncek Science High School · Zespół AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · Nawigator Księżycowy',
     footerLiveAtlas: 'Atlas Na Żywo',
   },
   sv: {
@@ -2247,10 +2247,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Teknisk Uppdragsbriefing',
     mdDesc: 'Kortfattad teknisk rapport och teamlista i Markdown.',
     aboutKicker: 'Om Oss',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
-    aboutTitle: 'AstroApex-teamet vid Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
+    aboutTitle: 'AstroApex-teamet vid Sınav İncek Science High School',
     aboutP1:
-      'Som elever vid naturvetenskapliga gymnasiet Sınav İncek Fen Lisesi byggde vi AstroApex för att göra NASA LRO LOLA-data och omloppsberäkningar tillgängliga direkt i webbläsaren.',
+      'Som elever vid naturvetenskapliga gymnasiet Sınav İncek Science High School byggde vi AstroApex för att göra NASA LRO LOLA-data och omloppsberäkningar tillgängliga direkt i webbläsaren.',
     aboutP2:
       'Vårt mål är att ge forskare och studenter en transparent jämförelse av Artemis-platser för solkraft och direktkontakt.',
     aboutStat1Value: '4',
@@ -2261,8 +2261,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Verklig Horisontprofil',
     contribKicker: 'Projektteam',
     contribTitle: 'Medverkande',
-    contribLead: 'Sınav İncek Fen Lisesi · AstroApex-teamet',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Månlandningsnavigator',
+    contribLead: 'Sınav İncek Science High School · AstroApex-teamet',
+    footerSubtitle: 'Sınav İncek Science High School · Månlandningsnavigator',
     footerLiveAtlas: 'Live-Atlas',
   },
   uk: {
@@ -2377,10 +2377,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Технічний брифінг місії',
     mdDesc: 'Стислий інженерний звіт та склад команди у форматі Markdown.',
     aboutKicker: 'Хто ми',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
-    aboutTitle: 'Команда AstroApex ліцею Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
+    aboutTitle: 'Команда AstroApex ліцею Sınav İncek Science High School',
     aboutP1:
-      'Ми — учні природничого ліцею Sınav İncek Fen Lisesi. Ми перетворили дані рельєфу NASA LRO LOLA та астрономічні розрахунки на зручний браузерний атлас.',
+      'Ми — учні природничого ліцею Sınav İncek Science High School. Ми перетворили дані рельєфу NASA LRO LOLA та астрономічні розрахунки на зручний браузерний атлас.',
     aboutP2:
       'Наша мета — дати дослідникам і студентам прозорий інструмент для оцінки енергії та зв’язку майданчиків Artemis на південному полюсі Місяця.',
     aboutStat1Value: '4',
@@ -2391,8 +2391,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Реальний горизонт',
     contribKicker: 'Команда проєкту',
     contribTitle: 'Учасники',
-    contribLead: 'Sınav İncek Fen Lisesi · Команда AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Місячний навігатор AstroApex',
+    contribLead: 'Sınav İncek Science High School · Команда AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · Місячний навігатор AstroApex',
     footerLiveAtlas: 'Онлайн-атлас',
   },
   id: {
@@ -2507,10 +2507,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Ringkasan Teknis Misi',
     mdDesc: 'Laporan teknik ringkas dan daftar tim dalam format Markdown.',
     aboutKicker: 'Tentang Kami',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
-    aboutTitle: 'Tim AstroApex Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
+    aboutTitle: 'Tim AstroApex Sınav İncek Science High School',
     aboutP1:
-      'Sebagai siswa SMA Sains Sınav İncek Fen Lisesi, kami mengembangkan AstroApex untuk menghadirkan data topografi NASA LRO LOLA dan perhitungan orbit langsung di browser.',
+      'Sebagai siswa SMA Sains Sınav İncek Science High School, kami mengembangkan AstroApex untuk menghadirkan data topografi NASA LRO LOLA dan perhitungan orbit langsung di browser.',
     aboutP2:
       'Tujuan kami adalah membantu peneliti dan pelajar membandingkan lokasi kutub selatan Artemis secara transparan untuk daya dan komunikasi.',
     aboutStat1Value: '4',
@@ -2521,8 +2521,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Profil Horizon Asli',
     contribKicker: 'Tim Proyek',
     contribTitle: 'Kontributor',
-    contribLead: 'Sınav İncek Fen Lisesi · Tim AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Navigator Lokasi Pendaratan Bulan',
+    contribLead: 'Sınav İncek Science High School · Tim AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · Navigator Lokasi Pendaratan Bulan',
     footerLiveAtlas: 'Atlas Langsung',
   },
   vi: {
@@ -2637,10 +2637,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Bản tóm tắt kỹ thuật nhiệm vụ',
     mdDesc: 'Báo cáo kỹ thuật ngắn gọn và danh sách nhóm định dạng Markdown.',
     aboutKicker: 'Về chúng tôi',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
     aboutTitle: 'Nhóm AstroApex Trường THPT Chuyên Khoa học Sınav İncek',
     aboutP1:
-      'Là học sinh trường Sınav İncek Fen Lisesi, chúng tôi xây dựng AstroApex để đưa dữ liệu địa hình NASA LRO LOLA và tính toán thiên văn lên trình duyệt một cách trực quan.',
+      'Là học sinh trường Sınav İncek Science High School, chúng tôi xây dựng AstroApex để đưa dữ liệu địa hình NASA LRO LOLA và tính toán thiên văn lên trình duyệt một cách trực quan.',
     aboutP2:
       'Mục tiêu của chúng tôi là giúp các nhà nghiên cứu và học sinh so sánh minh bạch các bãi đáp cực nam Mặt Trăng Artemis về năng lượng và liên lạc.',
     aboutStat1Value: '4',
@@ -2651,8 +2651,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Hồ sơ chân trời thực',
     contribKicker: 'Đội ngũ dự án',
     contribTitle: 'Thành viên đóng góp',
-    contribLead: 'Sınav İncek Fen Lisesi · Nhóm AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Trình điều hướng Mặt Trăng',
+    contribLead: 'Sınav İncek Science High School · Nhóm AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · Trình điều hướng Mặt Trăng',
     footerLiveAtlas: 'Atlas trực tiếp',
   },
   el: {
@@ -2767,10 +2767,10 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     mdTitle: 'Τεχνική Σύνοψη Αποστολής',
     mdDesc: 'Συνοπτική αναφορά μηχανικής και ομάδα σε μορφή Markdown.',
     aboutKicker: 'Ποιοι Είμαστε',
-    aboutSchool: 'Sınav İncek Fen Lisesi',
+    aboutSchool: 'Sınav İncek Science High School',
     aboutTitle: 'Ομάδα AstroApex του Επιστημονικού Λυκείου Sınav İncek',
     aboutP1:
-      'Ως μαθητές του Sınav İncek Fen Lisesi, δημιουργήσαμε το AstroApex ώστε τα δεδομένα NASA LRO LOLA και οι αστρονομικοί υπολογισμοί να λειτουργούν άμεσα στον περιηγητή.',
+      'Ως μαθητές του Sınav İncek Science High School, δημιουργήσαμε το AstroApex ώστε τα δεδομένα NASA LRO LOLA και οι αστρονομικοί υπολογισμοί να λειτουργούν άμεσα στον περιηγητή.',
     aboutP2:
       'Στόχος μας είναι η διαφανής σύγκριση των θέσεων Artemis στον νότιο πόλο της Σελήνης ως προς την ενέργεια και την άμεση επικοινωνία.',
     aboutStat1Value: '4',
@@ -2781,8 +2781,8 @@ export const TRANSLATIONS: Record<LangCode, TranslationBundle> = {
     aboutStat3Label: 'Πραγματικός Ορίζοντας',
     contribKicker: 'Ομάδα Έργου',
     contribTitle: 'Συντελεστές',
-    contribLead: 'Sınav İncek Fen Lisesi · Ομάδα AstroApex',
-    footerSubtitle: 'Sınav İncek Fen Lisesi · Σεληνιακός Πλοηγός AstroApex',
+    contribLead: 'Sınav İncek Science High School · Ομάδα AstroApex',
+    footerSubtitle: 'Sınav İncek Science High School · Σεληνιακός Πλοηγός AstroApex',
     footerLiveAtlas: 'Ζωντανός Άτλας',
   },
 };

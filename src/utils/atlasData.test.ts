@@ -80,11 +80,11 @@ test('download builders produce valid CSV, JSON, Markdown, and standalone HTML a
   assert.ok(csv.includes('Malapert Massif'));
 
   const json = JSON.parse(buildMissionConfigJson(cfg, comp));
-  assert.equal(json.school, 'Sınav İncek Fen Lisesi');
+  assert.equal(json.school, 'Sınav İncek Science High School');
   assert.equal(json.contributors.length, 5);
 
   const md = buildTechnicalBriefMarkdown(cfg, comp, TRANSLATIONS.tr);
-  assert.ok(md.includes('Sınav İncek Fen Lisesi'));
+  assert.ok(md.includes('Sınav İncek Science High School'));
 
   const html = buildOfflineAtlasLauncherHtml(cfg, comp, TRANSLATIONS.tr);
   assert.ok(html.startsWith('<!doctype html>'));
