@@ -3,16 +3,21 @@ import {
   type ComparisonResult,
   type MissionConfig,
 } from './atlasData';
+import { TRANSLATIONS, type TranslationBundle } from './i18n';
 
 export interface DownloadArtifact {
   id: string;
-  title: string;
-  formatLabel: string;
+  formatKey: 'htmlFormat' | 'csvFormat' | 'jsonFormat' | 'mdFormat';
+  titleKey: 'htmlTitle' | 'csvTitle' | 'jsonTitle' | 'mdTitle';
+  descKey: 'htmlDesc' | 'csvDesc' | 'jsonDesc' | 'mdDesc';
   filename: string;
   mimeType: string;
-  description: string;
   featured?: boolean;
-  buildContent: (config: MissionConfig, comparison: ComparisonResult) => string;
+  buildContent: (
+    config: MissionConfig,
+    comparison: ComparisonResult,
+    t?: TranslationBundle
+  ) => string;
 }
 
 export function buildComparisonCsv(
@@ -20,20 +25,20 @@ export function buildComparisonCsv(
   comparison: ComparisonResult
 ): string {
   const headers = [
-    'Senaryo',
-    'Saha Adi',
-    'Enlem (deg)',
-    'Boylam (deg)',
-    'Baslangic UTC',
-    'Sure (gun)',
-    'Gunes Gorunur (sa)',
-    'Dunya Gorunur (sa)',
-    'Ortak Gorus (sa)',
-    'En Uzun Karanlik (sa)',
-    'En Uzun Iletisim Kesintisi (sa)',
-    'Maks Gunes Yukselimi (deg)',
-    'Enerji Verimi (kWh/m2)',
-    'Min Batarya (%)',
+    'Scenario',
+    'Site',
+    'Latitude (deg)',
+    'Longitude (deg)',
+    'Start UTC',
+    'Duration (days)',
+    'Sun Visible (h)',
+    'Earth Visible (h)',
+    'Simultaneous (h)',
+    'Longest Darkness (h)',
+    'Longest Comm Gap (h)',
+    'Peak Sun Elev (deg)',
+    'Energy Yield (kWh/m2)',
+    'Min Battery (%)',
   ];
 
   const rows = [
@@ -80,7 +85,8 @@ export function buildMissionConfigJson(
   comparison: ComparisonResult
 ): string {
   const payload = {
-    project: 'AstroApex · Ay İniş Sahası Gezgini',
+    project: 'AstroApex',
+    school: 'Sınav İncek Fen Lisesi',
     generatedAt: new Date().toISOString(),
     liveAtlasUrl: comparison.atlasUrl,
     missionParameters: {
@@ -104,7 +110,7 @@ export function buildMissionConfigJson(
       preferredScenario: comparison.winner,
       simultaneousDeltaHours: comparison.bothDeltaHours,
     },
-    contributors: CONTRIBUTORS.map((c) => `${c.name} (${c.role})`),
+    contributors: CONTRIBUTORS,
   };
 
   return JSON.stringify(payload, null, 2);
@@ -112,45 +118,48 @@ export function buildMissionConfigJson(
 
 export function buildTechnicalBriefMarkdown(
   config: MissionConfig,
-  comparison: ComparisonResult
+  comparison: ComparisonResult,
+  t: TranslationBundle = TRANSLATIONS.tr
 ): string {
   const winnerLabel =
     comparison.winner === 'equal'
-      ? 'İki saha eşit ortak görüş süresine sahiptir.'
-      : `Senaryo ${comparison.winner} (${
+      ? t.verdictEqual
+      : `${
           comparison.winner === 'A' ? config.siteA.name : config.siteB.name
-        }) +${comparison.bothDeltaHours} saat daha fazla Güneş+Dünya ortak görüş penceresi sunar.`;
+        } ${t.verdictMoreSuffix} +${comparison.bothDeltaHours} ${t.hoursUnit}`;
 
   return [
-    `# AstroApex Teknik Görev Brifingi`,
+    `# ${t.mdTitle}`,
     ``,
-    `- **Canlı Atlas Bağlantısı:** ${comparison.atlasUrl}`,
-    `- **Görev Başlangıcı (UTC):** ${config.startUtc}`,
-    `- **Görev Süresi:** ${config.durationDays} gün`,
-    `- **Güç Konfigürasyonu:** ${config.loadWatts} W yük · ${config.batteryKwh} kWh batarya · ${config.solarAreaM2} m² solar panel`,
+    `- **${t.aboutSchool}:** AstroApex`,
+    `- **URL:** ${comparison.atlasUrl}`,
+    `- **UTC:** ${config.startUtc}`,
+    `- **${t.durationLabel}:** ${config.durationDays} ${t.daysUnit}`,
+    `- **${t.powerBudgetLabel}:** ${config.loadWatts} W · ${config.batteryKwh} kWh · ${config.solarAreaM2} m²`,
     ``,
-    `## Saha Karşılaştırma Özeti`,
+    `## ${t.tab1Title}`,
     ``,
-    `| Ölçüm | Senaryo A: ${config.siteA.name} | Senaryo B: ${config.siteB.name} |`,
+    `| ${t.metricCol} | ${config.siteA.name} | ${config.siteB.name} |`,
     `| --- | --- | --- |`,
-    `| Koordinat | ${config.siteA.lat}°, ${config.siteA.lon}° | ${config.siteB.lat}°, ${config.siteB.lon}° |`,
-    `| Güneş Görünür (sa) | ${comparison.siteA.sunHours} | ${comparison.siteB.sunHours} |`,
-    `| Dünya Görünür (sa) | ${comparison.siteA.earthHours} | ${comparison.siteB.earthHours} |`,
-    `| Ortak Görüş (sa) | ${comparison.siteA.bothHours} | ${comparison.siteB.bothHours} |`,
-    `| En Uzun Karanlık (sa) | ${comparison.siteA.longestDarkHours} | ${comparison.siteB.longestDarkHours} |`,
-    `| Min Batarya (%) | %${comparison.siteA.minBatteryPct} | %${comparison.siteB.minBatteryPct} |`,
+    `| ${t.sunWord} (${t.hoursUnit}) | ${comparison.siteA.sunHours} | ${comparison.siteB.sunHours} |`,
+    `| ${t.earthWord} (${t.hoursUnit}) | ${comparison.siteA.earthHours} | ${comparison.siteB.earthHours} |`,
+    `| ${t.bothWord} (${t.hoursUnit}) | ${comparison.siteA.bothHours} | ${comparison.siteB.bothHours} |`,
+    `| ${t.metricDark} | ${comparison.siteA.longestDarkHours} ${t.hoursUnit} | ${comparison.siteB.longestDarkHours} ${t.hoursUnit} |`,
+    `| ${t.metricCommGap} | ${comparison.siteA.longestCommGapHours} ${t.hoursUnit} | ${comparison.siteB.longestCommGapHours} ${t.hoursUnit} |`,
+    `| ${t.metricBattery} | %${comparison.siteA.minBatteryPct} | %${comparison.siteB.minBatteryPct} |`,
     ``,
-    `**Ortak Görüş Değerlendirmesi:** ${winnerLabel}`,
+    `**${t.verdictLabel}:** ${winnerLabel}`,
     ``,
-    `## Emeği Geçenler`,
-    ...CONTRIBUTORS.map((c) => `- **${c.name}** — ${c.role}`),
+    `## ${t.contribTitle}`,
+    ...CONTRIBUTORS.map((name) => `- ${name}`),
     ``,
   ].join('\n');
 }
 
 export function buildOfflineAtlasLauncherHtml(
   config: MissionConfig,
-  comparison: ComparisonResult
+  comparison: ComparisonResult,
+  t: TranslationBundle = TRANSLATIONS.tr
 ): string {
   const esc = (s: string | number) =>
     String(s)
@@ -163,7 +172,7 @@ export function buildOfflineAtlasLauncherHtml(
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AstroApex Çevrimdışı Görev Paketi · ${esc(config.siteA.name)} vs ${esc(config.siteB.name)}</title>
+  <title>AstroApex · ${esc(config.siteA.name)} / ${esc(config.siteB.name)}</title>
   <style>
     body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #0A0C0F; color: #ECE8DE; line-height: 1.55; padding: 32px 20px; }
     .wrap { max-width: 960px; margin: 0 auto; }
@@ -182,41 +191,39 @@ export function buildOfflineAtlasLauncherHtml(
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>AstroApex · Çevrimdışı Görev Özeti</h1>
-      <p class="muted">Başlangıç: ${esc(config.startUtc)} UTC · Süre: ${esc(config.durationDays)} gün · Güç: ${esc(config.loadWatts)} W / ${esc(config.batteryKwh)} kWh / ${esc(config.solarAreaM2)} m²</p>
-      <a class="btn" href="${esc(comparison.atlasUrl)}" target="_blank" rel="noopener noreferrer">Canlı AstroApex Atlasında Aç</a>
+      <h1>AstroApex · ${esc(t.htmlTitle)}</h1>
+      <p class="muted">${esc(t.aboutSchool)} · ${esc(config.startUtc)} UTC · ${esc(config.durationDays)} ${esc(t.daysUnit)} · ${esc(config.loadWatts)} W / ${esc(config.batteryKwh)} kWh / ${esc(config.solarAreaM2)} m²</p>
+      <a class="btn" href="${esc(comparison.atlasUrl)}" target="_blank" rel="noopener noreferrer">${esc(t.openAtlas)}</a>
     </div>
     <div class="grid">
       <div class="card">
-        <h2>Senaryo A · ${esc(config.siteA.name)}</h2>
+        <h2>${esc(t.scenarioALabel)} · ${esc(config.siteA.name)}</h2>
         <p class="muted mono">${esc(config.siteA.lat)}°, ${esc(config.siteA.lon)}° · LOLA</p>
-        <p>${esc(config.siteA.summary)}</p>
       </div>
       <div class="card">
-        <h2>Senaryo B · ${esc(config.siteB.name)}</h2>
+        <h2>${esc(t.scenarioBLabel)} · ${esc(config.siteB.name)}</h2>
         <p class="muted mono">${esc(config.siteB.lat)}°, ${esc(config.siteB.lon)}° · LOLA</p>
-        <p>${esc(config.siteB.summary)}</p>
       </div>
     </div>
     <div class="card">
-      <h2>Karşılaştırmalı Telemetri Tablosu</h2>
+      <h2>${esc(t.tab1Title)}</h2>
       <table>
         <thead>
-          <tr><th>Ölçüm</th><th>${esc(config.siteA.name)}</th><th>${esc(config.siteB.name)}</th></tr>
+          <tr><th>${esc(t.metricCol)}</th><th>${esc(config.siteA.name)}</th><th>${esc(config.siteB.name)}</th></tr>
         </thead>
         <tbody>
-          <tr><td>Güneş Görünür (sa)</td><td>${esc(comparison.siteA.sunHours)}</td><td>${esc(comparison.siteB.sunHours)}</td></tr>
-          <tr><td>Dünya Görünür (sa)</td><td>${esc(comparison.siteA.earthHours)}</td><td>${esc(comparison.siteB.earthHours)}</td></tr>
-          <tr><td>Ortak Görüş (sa)</td><td>${esc(comparison.siteA.bothHours)}</td><td>${esc(comparison.siteB.bothHours)}</td></tr>
-          <tr><td>En Uzun Karanlık (sa)</td><td>${esc(comparison.siteA.longestDarkHours)}</td><td>${esc(comparison.siteB.longestDarkHours)}</td></tr>
-          <tr><td>En Uzun İletişim Kesintisi (sa)</td><td>${esc(comparison.siteA.longestCommGapHours)}</td><td>${esc(comparison.siteB.longestCommGapHours)}</td></tr>
-          <tr><td>En Düşük Batarya (%)</td><td>%${esc(comparison.siteA.minBatteryPct)}</td><td>%${esc(comparison.siteB.minBatteryPct)}</td></tr>
+          <tr><td>${esc(t.sunWord)} (${esc(t.hoursUnit)})</td><td>${esc(comparison.siteA.sunHours)}</td><td>${esc(comparison.siteB.sunHours)}</td></tr>
+          <tr><td>${esc(t.earthWord)} (${esc(t.hoursUnit)})</td><td>${esc(comparison.siteA.earthHours)}</td><td>${esc(comparison.siteB.earthHours)}</td></tr>
+          <tr><td>${esc(t.bothWord)} (${esc(t.hoursUnit)})</td><td>${esc(comparison.siteA.bothHours)}</td><td>${esc(comparison.siteB.bothHours)}</td></tr>
+          <tr><td>${esc(t.metricDark)}</td><td>${esc(comparison.siteA.longestDarkHours)} ${esc(t.hoursUnit)}</td><td>${esc(comparison.siteB.longestDarkHours)} ${esc(t.hoursUnit)}</td></tr>
+          <tr><td>${esc(t.metricCommGap)}</td><td>${esc(comparison.siteA.longestCommGapHours)} ${esc(t.hoursUnit)}</td><td>${esc(comparison.siteB.longestCommGapHours)} ${esc(t.hoursUnit)}</td></tr>
+          <tr><td>${esc(t.metricBattery)}</td><td>%${esc(comparison.siteA.minBatteryPct)}</td><td>%${esc(comparison.siteB.minBatteryPct)}</td></tr>
         </tbody>
       </table>
     </div>
     <div class="card">
-      <h2>Emeği Geçenler</h2>
-      <p class="muted">${CONTRIBUTORS.map((c) => esc(c.name)).join(' · ')}</p>
+      <h2>${esc(t.contribTitle)}</h2>
+      <p class="muted">${CONTRIBUTORS.map((name) => esc(name)).join(' · ')}</p>
     </div>
   </div>
 </body>
@@ -226,43 +233,39 @@ export function buildOfflineAtlasLauncherHtml(
 export const DOWNLOAD_ARTIFACTS: DownloadArtifact[] = [
   {
     id: 'offline-html',
-    title: 'AstroApex Çevrimdışı Görev Atlası',
-    formatLabel: 'HTML Paketi',
+    formatKey: 'htmlFormat',
+    titleKey: 'htmlTitle',
+    descKey: 'htmlDesc',
     filename: 'AstroApex-Cevrimdisi-Atlas.html',
     mimeType: 'text/html;charset=utf-8',
-    description:
-      'Seçili A/B sahalarının koordinatlarını, karşılaştırma tablosunu ve canlı atlasta doğrudan açılış bağlantısını içeren bağımsız çevrimdışı dosya.',
     featured: true,
     buildContent: buildOfflineAtlasLauncherHtml,
   },
   {
     id: 'metrics-csv',
-    title: 'Saha Karşılaştırma Veri Seti',
-    formatLabel: 'CSV Tablo',
+    formatKey: 'csvFormat',
+    titleKey: 'csvTitle',
+    descKey: 'csvDesc',
     filename: 'AstroApex-Saha-Karsilastirma.csv',
     mimeType: 'text/csv;charset=utf-8',
-    description:
-      'Excel ve Python/Pandas analizleri için Güneş, Dünya, ortak görüş ve batarya metriklerini içeren tablo.',
     buildContent: buildComparisonCsv,
   },
   {
     id: 'mission-json',
-    title: 'Görev Konfigürasyon Manifestosu',
-    formatLabel: 'JSON Veri',
+    formatKey: 'jsonFormat',
+    titleKey: 'jsonTitle',
+    descKey: 'jsonDesc',
     filename: 'AstroApex-Gorev-Paketi.json',
     mimeType: 'application/json;charset=utf-8',
-    description:
-      'LOLA profil parametrelerini, güç bütçesini ve aktif senaryo koordinatlarını saklayan makine okunabilir yapı.',
     buildContent: buildMissionConfigJson,
   },
   {
     id: 'brief-md',
-    title: 'Teknik Görev Brifingi',
-    formatLabel: 'Markdown Rapor',
+    formatKey: 'mdFormat',
+    titleKey: 'mdTitle',
+    descKey: 'mdDesc',
     filename: 'AstroApex-Teknik-Brifing.md',
     mimeType: 'text/markdown;charset=utf-8',
-    description:
-      'Sunumlar ve mühendislik incelemeleri için özetlenmiş karar raporu ve ekip listesi.',
     buildContent: buildTechnicalBriefMarkdown,
   },
 ];

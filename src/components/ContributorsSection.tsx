@@ -1,6 +1,11 @@
 import { CONTRIBUTORS } from '../utils/atlasData';
+import type { TranslationBundle } from '../utils/i18n';
 
-export function ContributorsSection() {
+interface ContributorsSectionProps {
+  t: TranslationBundle;
+}
+
+export function ContributorsSection({ t }: ContributorsSectionProps) {
   return (
     <section
       id="emegi-gecenler"
@@ -9,40 +14,29 @@ export function ContributorsSection() {
       <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <p className="text-xs font-medium tracking-wider uppercase text-[#949AA8]">
-            Proje Ekibi
+            {t.contribKicker}
           </p>
           <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight text-[#ECE8DE] sm:text-3xl">
-            Emeği Geçenler
+            {t.contribTitle}
           </h2>
         </div>
-        <p className="max-w-md text-sm text-[#949AA8]">
-          AstroApex atlasının tasarım, yörünge hesaplama, güç modelleme ve yayın
-          süreçlerine katkı sağlayan ekip üyeleri.
-        </p>
+        <p className="text-sm text-[#949AA8]">{t.contribLead}</p>
       </div>
 
       <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
-        {CONTRIBUTORS.map((member, index) => (
+        {CONTRIBUTORS.map((name, index) => (
           <article
-            key={member.name}
-            className={`flex flex-col justify-between rounded-xl border border-[#272C36] bg-[#12151A] p-6 ${
+            key={name}
+            className={`flex items-center justify-between rounded-xl border border-[#272C36] bg-[#12151A] px-6 py-6 ${
               index < 3 ? 'lg:col-span-2' : 'lg:col-span-3'
             }`}
           >
-            <div>
-              <div className="flex items-center justify-between gap-2 text-xs text-[#949AA8]">
-                <span className="font-mono-tabular">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span>{member.role}</span>
-              </div>
-              <h3 className="mt-3 font-display text-xl font-semibold text-[#ECE8DE]">
-                {member.name}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#949AA8]">
-                {member.focus}
-              </p>
-            </div>
+            <h3 className="font-display text-xl font-semibold text-[#ECE8DE]">
+              {name}
+            </h3>
+            <span className="font-mono-tabular text-xs text-[#949AA8]">
+              {String(index + 1).padStart(2, '0')}
+            </span>
           </article>
         ))}
       </div>

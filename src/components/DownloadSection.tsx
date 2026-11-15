@@ -7,19 +7,21 @@ import {
   triggerFileDownload,
   type DownloadArtifact,
 } from '../utils/downloads';
+import type { TranslationBundle } from '../utils/i18n';
 
 interface DownloadSectionProps {
   config: MissionConfig;
   comparison: ComparisonResult;
+  t: TranslationBundle;
 }
 
-export function DownloadSection({ config, comparison }: DownloadSectionProps) {
+export function DownloadSection({ config, comparison, t }: DownloadSectionProps) {
   const [downloadedIds, setDownloadedIds] = useState<Record<string, string>>({});
 
   const handleDownload = (artifact: DownloadArtifact) => {
-    const content = artifact.buildContent(config, comparison);
+    const content = artifact.buildContent(config, comparison, t);
     triggerFileDownload(artifact.filename, content, artifact.mimeType);
-    const nowTime = new Date().toLocaleTimeString('tr-TR', {
+    const nowTime = new Date().toLocaleTimeString([], {
       hour: '2-digit',
       minute: '2-digit',
     });
@@ -40,7 +42,7 @@ export function DownloadSection({ config, comparison }: DownloadSectionProps) {
   const featuredArtifact = DOWNLOAD_ARTIFACTS.find((a) => a.featured) ?? DOWNLOAD_ARTIFACTS[0];
   const secondaryArtifacts = DOWNLOAD_ARTIFACTS.filter((a) => a.id !== featuredArtifact.id);
 
-  const featuredContent = featuredArtifact.buildContent(config, comparison);
+  const featuredContent = featuredArtifact.buildContent(config, comparison, t);
   const featuredSize = formatByteSize(featuredContent);
 
   const getIcon = (id: string) => {
@@ -57,15 +59,14 @@ export function DownloadSection({ config, comparison }: DownloadSectionProps) {
       <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
           <p className="text-xs font-medium tracking-wider uppercase text-[#949AA8]">
-            Çevrimdışı Erişim ve Dışa Aktarım
+            {t.downloadKicker}
           </p>
           <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight text-[#ECE8DE] sm:text-3xl [text-wrap:balance]">
-            AstroApex görev paketini ve verilerini indirin
+            {t.downloadTitle}
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#949AA8]">
-            Aktif seçiminiz ({config.siteA.name} ↔ {config.siteB.name} · {config.durationDays} gün ·{' '}
-            {config.loadWatts} W) baz alınarak üretilen dosyalar tıkladığınız anda
-            cihazınıza doğrudan indirilir.
+            {t.downloadLeadPrefix} {config.siteA.name} ↔ {config.siteB.name} ·{' '}
+            {config.durationDays} {t.daysUnit} · {config.loadWatts} W
           </p>
         </div>
 
@@ -75,7 +76,7 @@ export function DownloadSection({ config, comparison }: DownloadSectionProps) {
           className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#363D4A] bg-[#12151A] px-5 py-2.5 text-sm font-semibold text-[#ECE8DE] whitespace-nowrap shrink-0 transition-colors duration-150 hover:border-[#ECE8DE] hover:bg-[#191D24]"
         >
           <Download className="h-4 w-4" aria-hidden="true" />
-          <span>Tüm Paketi İndir (4 Dosya)</span>
+          <span>{t.downloadAllBtn}</span>
         </button>
       </div>
 
@@ -83,17 +84,17 @@ export function DownloadSection({ config, comparison }: DownloadSectionProps) {
       <div className="mt-8 flex flex-col justify-between gap-6 rounded-xl border border-[#363D4A] bg-[#12151A] p-6 sm:flex-row sm:items-center sm:p-8">
         <div className="max-w-2xl">
           <div className="flex flex-wrap items-center gap-2 text-xs text-[#949AA8]">
-            <span className="font-medium text-[#FFB648]">{featuredArtifact.formatLabel}</span>
+            <span className="font-medium text-[#FFB648]">{t[featuredArtifact.formatKey]}</span>
             <span aria-hidden="true">·</span>
             <span className="font-mono-tabular">{featuredArtifact.filename}</span>
             <span aria-hidden="true">·</span>
             <span className="font-mono-tabular">{featuredSize}</span>
           </div>
           <h3 className="mt-2 font-display text-xl font-semibold text-[#ECE8DE]">
-            {featuredArtifact.title}
+            {t[featuredArtifact.titleKey]}
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-[#949AA8]">
-            {featuredArtifact.description}
+            {t[featuredArtifact.descKey]}
           </p>
         </div>
 
@@ -106,19 +107,19 @@ export function DownloadSection({ config, comparison }: DownloadSectionProps) {
             {downloadedIds[featuredArtifact.id] ? (
               <>
                 <Check className="h-4 w-4 text-[#0A0C0F]" aria-hidden="true" />
-                <span>Tekrar İndir</span>
+                <span>{t.redownloadBtn}</span>
               </>
             ) : (
               <>
                 <Download className="h-4 w-4" aria-hidden="true" />
-                <span>Atlas Paketini İndir</span>
+                <span>{t.downloadAtlasBtn}</span>
               </>
             )}
           </button>
 
           {downloadedIds[featuredArtifact.id] && (
             <span className="font-mono-tabular text-xs text-[#57D9A3]">
-              İndirildi · {downloadedIds[featuredArtifact.id]}
+              {t.downloadedAtPrefix} · {downloadedIds[featuredArtifact.id]}
             </span>
           )}
         </div>
@@ -128,9 +129,10 @@ export function DownloadSection({ config, comparison }: DownloadSectionProps) {
       <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-3">
         {secondaryArtifacts.map((artifact) => {
           const Icon = getIcon(artifact.id);
-          const content = artifact.buildContent(config, comparison);
+          const content = artifact.buildContent(config, comparison, t);
           const sizeLabel = formatByteSize(content);
           const downloadedAt = downloadedIds[artifact.id];
+          const title = t[artifact.titleKey];
 
           return (
             <article
@@ -139,26 +141,26 @@ export function DownloadSection({ config, comparison }: DownloadSectionProps) {
             >
               <div>
                 <div className="flex items-center justify-between gap-2 text-xs text-[#949AA8]">
-                  <span className="font-medium text-[#5AA9FF]">{artifact.formatLabel}</span>
+                  <span className="font-medium text-[#5AA9FF]">{t[artifact.formatKey]}</span>
                   <span className="font-mono-tabular">{sizeLabel}</span>
                 </div>
                 <h3 className="mt-3 font-display text-lg font-semibold text-[#ECE8DE]">
-                  {artifact.title}
+                  {title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-[#949AA8]">
-                  {artifact.description}
+                  {t[artifact.descKey]}
                 </p>
               </div>
 
               <div className="mt-6 flex items-center justify-between gap-3 border-t border-[#272C36] pt-4">
                 <span className="truncate font-mono-tabular text-xs text-[#949AA8]">
-                  {downloadedAt ? `İndirildi · ${downloadedAt}` : artifact.filename}
+                  {downloadedAt ? `${t.downloadedAtPrefix} · ${downloadedAt}` : artifact.filename}
                 </span>
 
                 <button
                   type="button"
                   onClick={() => handleDownload(artifact)}
-                  aria-label={`${artifact.title} indir`}
+                  aria-label={`${title} ${t.downloadBtn}`}
                   className="inline-flex items-center gap-1.5 rounded-lg border border-[#363D4A] bg-[#191D24] px-3.5 py-2 text-xs font-semibold text-[#ECE8DE] whitespace-nowrap shrink-0 transition-colors hover:border-[#ECE8DE]"
                 >
                   {downloadedAt ? (
@@ -166,7 +168,7 @@ export function DownloadSection({ config, comparison }: DownloadSectionProps) {
                   ) : (
                     <Icon className="h-3.5 w-3.5" aria-hidden="true" />
                   )}
-                  <span>İndir</span>
+                  <span>{t.downloadBtn}</span>
                 </button>
               </div>
             </article>
