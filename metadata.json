@@ -1,0 +1,6 @@
+{
+  "name": "AstroApex",
+  "description": "Ay Güney Kutbu iniş sahası karşılaştırma, LOLA ufuk profili, güç bütçesi ve görev atlası web platformu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
